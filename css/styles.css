@@ -15,7 +15,8 @@
 	--bg-color: #fdfdfd;
 	--text-color: #333;
 	--main-color: #754ef9;
-	--main-color-accent: #4915f7;
+	--main-color-accent-1: #683CF8;
+	--main-color-accent-2: #4915f7;
 	--white-color: #fdfdfd;
 	--shadow-color: rgba(0, 0, 0, 0.2);
 	--size: 15rem;
@@ -29,7 +30,7 @@
 	:root {
 		--text-color: papayawhip;
 		--color-bg: navy;
-		--main-color-accent: #2626a0;
+		--main-color-accent-2: #2626a0;
 	}
 } */
 
@@ -313,6 +314,11 @@ span {
 
 /* Logo wall css */
 
+#skills {
+	background-color: var(--main-color);
+	padding-bottom: 6rem;
+}
+
 .skill-heading-container {
 	position: absolute;
 	align-self: center;
@@ -399,7 +405,7 @@ span {
 	place-items: center;
 	width: var(--size);
 	fill: var(--white-color);
-	background: var(--main-color-accent);
+	background: var(--main-color-accent-2);
 	aspect-ratio: 16/9;
 	padding: calc(var(--size) / 10);
 	border-radius: 0.5rem;
@@ -410,7 +416,7 @@ span {
 	position: absolute;
 	left: 0;
 	width: 100vw;
-	z-index: -1;
+	/* z-index: -1; */
 	background-color: var(--main-color);
 	display: flex;
 	flex-direction: column;
@@ -452,6 +458,7 @@ span {
 	margin-top: 30rem;
 	overflow: hidden;
 	border-radius: 5rem;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 @media only screen and (max-width: 1000px) {
 	.container {
@@ -501,7 +508,7 @@ span {
 }
 .slider .box .bg {
 	padding: 2rem;
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(73, 21, 247, 0.5);
 	width: 55%;
 	transform: skewX(7deg);
 	position: absolute;
@@ -592,62 +599,62 @@ span {
 	border: none;
 }
 .slider .box1 {
-	background-color: #500033;
+	background-color: var(--white-color); /* #500033 */ 
 }
 .slider .box1 .illustration .inner {
-	background-color: #ff0077;
+	background-color: var(--main-color-accent-1);
 }
 .slider .box1 .illustration .inner::after,
 .slider .box1 .illustration .inner::before {
-	background-color: rgba(255, 0, 119, 0.4);
+	background-color: rgba(104, 60, 248, 0.4);
 }
 .slider .box1 button {
-	background-color: #ff0077;
+	background-color: var(--main-color-accent-1);
 }
 .slider .box2 {
-	background-color: #000050;
+	background-color: var(--white-color); /* #000050 */ 
 }
 .slider .box2 .illustration .inner {
-	background-color: #0033ff;
+	background-color: var(--main-color-accent-1);
 }
 .slider .box2 .illustration .inner::after,
 .slider .box2 .illustration .inner::before {
-	background-color: rgba(0, 51, 255, 0.4);
+	background-color: rgba(104, 60, 248, 0.4);
 }
 .slider .box2 button {
 	background-color: #0033ff;
 }
 .slider .box3 {
-	background-color: #00501d;
+	background-color: var(--white-color); /* #00501d */
 }
 .slider .box3 .illustration .inner {
-	background-color: #00ff44;
+	background-color: var(--main-color-accent-1);
 }
 .slider .box3 .illustration .inner::after,
 .slider .box3 .illustration .inner::before {
-	background-color: rgba(0, 255, 68, 0.4);
+	background-color: rgba(104, 60, 248, 0.4);
 }
 .slider .box3 button {
 	background-color: #00ff44;
 }
 .slider .box4 {
-	background-color: #554d00;
+	background-color: var(--white-color); /* #554d00 */
 }
 .slider .box4 .illustration .inner {
-	background-color: #ff4e00;
+	background-color: var(--main-color-accent-1);
 }
 .slider .box4 .illustration .inner::after,
 .slider .box4 .illustration .inner::before {
-	background-color: rgba(255, 78, 0, 0.4);
+	background-color: rgba(104, 60, 248, 0.4);
 }
 .slider .box4 button {
 	background-color: #ff4e00;
 }
 .slider .box5 {
-	background-color: #300050;
+	background-color: var(--white-color); /* #300050 */
 }
 .slider .box5 .illustration .inner {
-	background-color: #8000ff;
+	background-color: var(--main-color-accent-1);
 }
 .slider .box5 .illustration .inner::after,
 .slider .box5 .illustration .inner::before {
@@ -730,12 +737,14 @@ span {
 	top: 50%;
 	left: 2%;
 	transform: translateY(-50%);
+	color: var(--white-color);
 }
 
 .next {
 	top: 50%;
 	right: 2%;
 	transform: translateY(-50%);
+	color: var(--text-color);
 }
 
 .trail {
@@ -748,7 +757,7 @@ span {
 	gap: 1rem;
 	text-align: center;
 	font-size: 1.5rem;
-	color: var(--white-color);
+	color: var(--text-color);
 }
 @media only screen and (max-width: 650px) {
 	.trail {
@@ -758,7 +767,7 @@ span {
 }
 .trail div {
 	padding: 2rem;
-	border-top: 3px solid #fff;
+	border-top: 3px solid var(--text-color);
 	cursor: pointer;
 	opacity: 0.3;
 	transition: all 0.3s ease;
