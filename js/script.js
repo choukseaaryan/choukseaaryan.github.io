@@ -1,4 +1,24 @@
+// scroll sections active link
+let sections = document.querySelectorAll("section");
+let navLinks = document.querySelectorAll("header nav a");
+
 window.onscroll = () => {
+
+	sections.forEach(sec => {
+		let top = window.scrollY;
+		let offset = sec.offsetTop - 150;
+		let height = sec.offsetHeight;
+		let id = sec.getAttribute("id");
+
+		if (top >= offset && top < offset + height) {
+			navLinks.forEach(links => {
+				links.classList.remove("active");
+				document.querySelector("header nav a[href*=" + id + "]").classList.add("active");
+			});
+		}
+	});
+
+	// sticky navbar
 	let header = document.querySelector(".header");
 
 	header.classList.toggle("sticky", window.scrollY > 100);
@@ -15,7 +35,7 @@ let value = 0;
 // trail index number
 let trailValue = 0;
 // interval (Duration)
-let interval = 4000000;
+let interval = 5000;
 
 // Function to slide forward
 const slide = (condition) => {
@@ -138,38 +158,38 @@ const clickCheck = (e) => {
 trail.forEach((cur) => cur.addEventListener("click", (ev) => clickCheck(ev)));
 
 // Mobile touch Slide Section
-const touchSlide = (() => {
-	let start, move, change, sliderWidth;
+// const touchSlide = (() => {
+// 	let start, move, change, sliderWidth;
 
-	// Do this on initial touch on screen
-	slider.addEventListener("touchstart", (e) => {
-		// get the touche position of X on the screen
-		start = e.touches[0].clientX;
-		// (each slide with) the width of the slider container divided by the number of slides
-		sliderWidth = slider.clientWidth / trail.length;
-	});
+// 	// Do this on initial touch on screen
+// 	slider.addEventListener("touchstart", (e) => {
+// 		// get the touche position of X on the screen
+// 		start = e.touches[0].clientX;
+// 		// (each slide with) the width of the slider container divided by the number of slides
+// 		sliderWidth = slider.clientWidth / trail.length;
+// 	});
 
-	// Do this on touchDrag on screen
-	slider.addEventListener("touchmove", (e) => {
-		// prevent default function
-		e.preventDefault();
-		// get the touche position of X on the screen when dragging stops
-		move = e.touches[0].clientX;
-		// Subtract initial position from end position and save to change variabla
-		change = start - move;
-	});
+// 	// Do this on touchDrag on screen
+// 	slider.addEventListener("touchmove", (e) => {
+// 		// prevent default function
+// 		e.preventDefault();
+// 		// get the touche position of X on the screen when dragging stops
+// 		move = e.touches[0].clientX;
+// 		// Subtract initial position from end position and save to change variabla
+// 		change = start - move;
+// 	});
 
-	const mobile = (e) => {
-		// if change is greater than a quarter of sliderWidth, next else Do NOTHING
-		change > sliderWidth / 4 ? slide("increase") : null;
-		// if change * -1 is greater than a quarter of sliderWidth, prev else Do NOTHING
-		change * -1 > sliderWidth / 4 ? slide("decrease") : null;
-		// reset all variable to 0
-		[start, move, change, sliderWidth] = [0, 0, 0, 0];
-	};
-	// call mobile on touch end
-	slider.addEventListener("touchend", mobile);
-})();
+// 	const mobile = (e) => {
+// 		// if change is greater than a quarter of sliderWidth, next else Do NOTHING
+// 		change > sliderWidth / 4 ? slide("increase") : null;
+// 		// if change * -1 is greater than a quarter of sliderWidth, prev else Do NOTHING
+// 		change * -1 > sliderWidth / 4 ? slide("decrease") : null;
+// 		// reset all variable to 0
+// 		[start, move, change, sliderWidth] = [0, 0, 0, 0];
+// 	};
+// 	// call mobile on touch end
+// 	slider.addEventListener("touchend", mobile);
+// })();
 
 // Stop autoscroll when mouse is hovered over the carousel
 // slider.addEventListener("mouseover", () => {
