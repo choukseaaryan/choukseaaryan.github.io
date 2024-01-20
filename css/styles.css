@@ -213,8 +213,7 @@ section {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* animation: professionRotate 10s ease-out infinite; */
-	transform: rotate(-120deg);
+	animation: professionRotate 10s ease-out infinite;
 }
 
 @keyframes professionRotate {
