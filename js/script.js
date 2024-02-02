@@ -213,3 +213,12 @@ trail.forEach((cur) => cur.addEventListener("click", (ev) => clickCheck(ev)));
 // slider.addEventListener("mouseout", () => {
 // 	start = setInterval(() => slide("increase"), interval);
 // });
+
+
+// Projects script
+
+document.querySelectorAll(".project").forEach((item) => {
+  item.addEventListener("click", (event) => {
+    item.classList.toggle("opened");
+  });
+});

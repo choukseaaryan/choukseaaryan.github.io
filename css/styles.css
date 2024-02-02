@@ -121,7 +121,7 @@ body {
 }
 
 section {
-	min-height: 100vh;
+	min-height: 100svh;
 	padding: 8rem 7% 2rem;
 }
 
@@ -489,12 +489,7 @@ span {
 	overflow: hidden;
 	position: relative;
 }
-@media only screen and (max-width: 650px) {
-	.slider .box {
-		grid-template-columns: 1fr;
-		grid-template-rows: repeat(2, 1fr);
-	}
-}
+
 .slider .box .bg {
 	padding: 2rem;
 	background-color: rgba(73, 21, 247, 0.5);
@@ -511,15 +506,7 @@ span {
 		width: 65%;
 	}
 }
-@media only screen and (max-width: 650px) {
-	.slider .box .bg {
-		width: 100%;
-		left: 0;
-		bottom: 0;
-		height: 54%;
-		transform: skewX(0deg);
-	}
-}
+
 .slider .box .bg::before {
 	content: "";
 	width: 100%;
@@ -531,13 +518,7 @@ span {
 	pointer-events: none;
 	transform: skewX(10deg);
 }
-@media only screen and (max-width: 650px) {
-	.slider .box .bg::before {
-		width: 120%;
-		bottom: 0;
-		transform: skewX(0deg);
-	}
-}
+
 .slider .box .details {
 	padding: 5rem;
 	padding-left: 10rem;
@@ -546,6 +527,25 @@ span {
 	grid-row: 1/-1;
 }
 @media only screen and (max-width: 650px) {
+	.slider .box .bg::before {
+		width: 120%;
+		bottom: 0;
+		transform: skewX(0deg);
+	}
+
+	.slider .box {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(2, 1fr);
+	}
+
+	.slider .box .bg {
+		width: 100%;
+		left: 0;
+		bottom: 0;
+		height: 54%;
+		transform: skewX(0deg);
+	}
+
 	.slider .box .details {
 		grid-row: 2 / span 1;
 		grid-column: 1/-1;
@@ -776,6 +776,94 @@ span {
 
 /* Projects css */
 
+#projects {
+	min-height: fit-content;
+}
+
+.projects-container {
+	margin-top: 5rem;
+}
+.project {
+	margin-top: 2.5rem;
+}
+
+.project {
+	position: relative;
+	cursor: pointer;
+	z-index: 0;
+}
+
+.project:before {
+	position: absolute;
+	content: "";
+	inset: 0;
+	background: rgba(0, 0, 0, 0.6);
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	border-radius: 0.6rem;
+}
+
+.project img {
+	width: 100%;
+	position: relative;
+	height: 8rem;
+	object-fit: cover;
+	border-radius: 0.6rem;
+	display: block;
+	top: 0;
+	transition: 0.5s ease-in-out;
+}
+
+.project .content {
+	position: absolute;
+	inset: 0;
+	z-index: 2;
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.project .content h2 {
+	font-size: 2.5rem;
+	color: #fff;
+	text-align: center;
+}
+
+.project .content p {
+	color: #fff;
+	font-size: 1.7rem;
+	text-align: center;
+	line-height: 1.4;
+	height: 0;
+	overflow: hidden;
+	-moz-animation-delay: 3.5s;
+	-webkit-animation-delay: 3.5s;
+	-o-animation-delay: 3.5s;
+	animation-delay: 3.5s;
+	margin-top: 0;
+}
+
+.project .content a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.project .content a:visited {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.project.opened img {
+	height: 24rem;
+}
+.project.opened .content p {
+	height: auto;
+	margin-top: 10px;
+}
+
+/* 
 .projects-wrapper {
 	position: absolute;
 	margin-top: 20px;
@@ -1043,7 +1131,7 @@ li:nth-child(2) {
 	100% {
 		top: 0%;
 	}
-}
+} */
 
 /* Contact css */
 
@@ -1101,6 +1189,11 @@ li:nth-child(2) {
 .footer-text {
 	font-size: 1.6rem;
 	color: var(--white-color);
+}
+
+.footer-text a {
+	color: var(--white-color);
+	text-decoration: underline;
 }
 
 .footer-iconTop a {
@@ -1309,17 +1402,17 @@ li:nth-child(2) {
 	.home .profession-box .profession i {
 		margin-right: 0;
 	}
-	
+
 	.home .profession-box .profession:nth-child(1) {
 		transform: rotate(0deg) translate(0, -335px);
 	}
-	
+
 	.home .profession-box .profession:nth-child(2) {
 		transform: rotate(120deg) translate(-110px, -400px);
 	}
-	
+
 	.home .profession-box .profession:nth-child(3) {
-		transform: rotate(-120deg) translate(-120px, -210px);
+		transform: rotate(-120deg) translate(-100px, -270px);
 	}
 
 	.home .profession-box .circle {
@@ -1338,8 +1431,21 @@ li:nth-child(2) {
 		border-width: 23.9rem;
 	}
 
+	#about {
+		flex-direction: column;
+	}
+
+	.about-content h2 {
+		text-align: center;
+	}
+
+	.about-content p {
+		text-align: center;
+		padding: 10px 10%;
+	}
+
 	#projects {
-		height: auto
+		height: auto;
 	}
 
 	.projects-wrapper {
@@ -1357,5 +1463,11 @@ li:nth-child(2) {
 		margin-top: 600px;
 		align-items: center;
 		justify-content: center;
+	}
+}
+
+@media (max-width: 650px) {
+	.project.opened img {
+		height: 55rem;
 	}
 }
