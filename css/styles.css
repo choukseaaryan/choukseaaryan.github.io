@@ -907,6 +907,8 @@ span {
 	cursor: pointer;
 }
 
+/* Footer CSS */
+
 .footer {
 	display: flex;
 	justify-content: space-between;
@@ -947,7 +949,7 @@ span {
 	color: #333;
 }
 
-/* BREKPOINTS */
+/* BREAKPOINTS */
 @media (max-width: 1250px) {
 	html {
 		font-size: 55%;

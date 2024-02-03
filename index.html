@@ -504,7 +504,7 @@
 					</div>
 				</div>
 				<div class="project">
-					<img src="/images/e-card.png" alt="Mountains" />
+					<img src="/images/e-card.png" alt="E-card" />
 
 					<div class="content">
 						<h2>Digital Business Card Generator</h2>
@@ -529,19 +529,44 @@
 
 			<form action="#">
 				<div class="input-box">
-					<input type="text" placeholder="Full Name" />
-					<input type="email" placeholder="Email Address" />
+					<input
+						id="name"
+						type="text"
+						placeholder="Full Name"
+						autocomplete="off"
+						required
+					/>
+					<input
+						id="email"
+						type="email"
+						placeholder="Email Address"
+						autocomplete="off"
+						required
+					/>
 				</div>
 				<div class="input-box">
-					<input type="text" placeholder="Mobile Number" />
-					<input type="text" placeholder="Email Subject" />
+					<input
+						id="phone"
+						type="text"
+						placeholder="Mobile Number"
+						autocomplete="off"
+					/>
+					<input
+						id="subject"
+						type="text"
+						placeholder="Email Subject"
+						autocomplete="off"
+						required
+					/>
 				</div>
 				<textarea
 					name=""
-					id=""
+					id="message"
 					cols="30"
 					rows="10"
-					placeholder="Your Message"
+					placeholder="Write your message here..."
+					autocomplete="off"
+					required
 				></textarea>
 				<input type="submit" value="Send Message" class="btn" />
 			</form>
@@ -563,6 +588,8 @@
 			</div>
 		</footer>
 
+		<script src="https://smtpjs.com/v3/smtp.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<script src="js/script.js"></script>
 	</body>
 </html>

@@ -214,11 +214,57 @@ trail.forEach((cur) => cur.addEventListener("click", (ev) => clickCheck(ev)));
 // 	start = setInterval(() => slide("increase"), interval);
 // });
 
-
 // Projects script
 
 document.querySelectorAll(".project").forEach((item) => {
-  item.addEventListener("click", (event) => {
-    item.classList.toggle("opened");
-  });
+	item.addEventListener("click", (event) => {
+		item.classList.toggle("opened");
+	});
+});
+
+// Contact form script
+
+const form = document.querySelector("form");
+const fullName = document.getElementById("name");
+const email = document.getElementById("email");
+const phone = document.getElementById("phone");
+const subject = document.getElementById("subject");
+const message = document.getElementById("message");
+
+function sendEmail() {
+	const bodyMessage = `
+		<h3>Name: ${fullName.value || "Not Available"}<br><br>
+		Email: ${email.value || "Not Available"}<br><br>
+		Phone: ${phone.value || "Not Available"}<br><br>
+		Message: ${message.value || "Not Available"}</h3>
+	`;
+
+	Email.send({
+		Host: "smtp.elasticemail.com",
+		Username: "aaryan2chouksey@gmail.com",
+		Password: "18742140D84C4248D66D0B109F083534B0B5",
+		To: "aaryan2chouksey@gmail.com",
+		From: "aaryan2chouksey@gmail.com",
+		Subject: subject.value || "No Subject",
+		Body: bodyMessage,
+	}).then((message) => {
+		if (message == "OK") {
+			Swal.fire({
+				title: "Success!",
+				text: "Message sent to Aaryan!",
+				icon: "success",
+			});
+		} else {
+			Swal.fire({
+				title: "Error!",
+				text: "Message not sent! Please try again.",
+				icon: "error",
+			});
+		}
+	});
+}
+
+form.addEventListener("submit", (event) => {
+	event.preventDefault();
+	sendEmail();
 });
