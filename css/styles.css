@@ -846,12 +846,12 @@ span {
 }
 
 .project .content a {
-	color: #fff;
+	color: var(--main-color);
 	text-decoration: underline;
 }
 
 .project .content a:visited {
-	color: #fff;
+	color: var(--main-color);
 	text-decoration: underline;
 }
 

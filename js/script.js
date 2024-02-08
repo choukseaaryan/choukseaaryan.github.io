@@ -240,9 +240,7 @@ function sendEmail() {
 	`;
 
 	Email.send({
-		Host: "smtp.elasticemail.com",
-		Username: "aaryan2chouksey@gmail.com",
-		Password: "18742140D84C4248D66D0B109F083534B0B5",
+		SecureToken: "ef89ab81-3da9-4ba9-9795-c369861d8b3d",
 		To: "aaryan2chouksey@gmail.com",
 		From: "aaryan2chouksey@gmail.com",
 		Subject: subject.value || "No Subject",
