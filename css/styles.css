@@ -46,6 +46,19 @@ body {
 	min-height: 100vh;
 }
 
+.cursor-follower {
+  --circle-size: 40px;
+  position: fixed;
+  height: var(--circle-size);
+  width: var(--circle-size);
+  border: 1px solid var(--text-color);
+  border-radius: 100%;
+  top: calc(var(--circle-size) / 2 * -1);
+  left: calc(var(--circle-size) / 2 * -1);
+  pointer-events: none;
+	z-index: 1000;
+}
+
 .header {
 	position: fixed;
 	top: 0;
@@ -783,8 +796,9 @@ span {
 .projects-container {
 	margin-top: 5rem;
 }
+
 .project {
-	margin-top: 2.5rem;
+	margin-top: 3rem;
 }
 
 .project {
@@ -802,6 +816,8 @@ span {
 	height: 100%;
 	z-index: 1;
 	border-radius: 0.6rem;
+	border: 1px solid var(--main-color);
+	box-shadow: 0 0 10px 5px rgba(117, 78, 249, 0.5);
 }
 
 .project img {
@@ -846,12 +862,12 @@ span {
 }
 
 .project .content a {
-	color: var(--main-color);
+	color: #fff;
 	text-decoration: underline;
 }
 
 .project .content a:visited {
-	color: var(--main-color);
+	color: #fff;
 	text-decoration: underline;
 }
 
