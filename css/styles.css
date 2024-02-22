@@ -26,6 +26,11 @@
 	--scroll-end: calc(-100% - var(--gap));
 }
 
+.dark-mode {
+	--bg-color: #0b061f;
+	--text-color: #fdfdfd;
+	--shadow-color: rgba(0, 0, 0, 0.7);
+}
 /* @media (prefers-color-scheme: dark) {
 	:root {
 		--text-color: papayawhip;
