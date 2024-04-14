@@ -31,13 +31,6 @@
 	--text-color: #fdfdfd;
 	--shadow-color: rgba(0, 0, 0, 0.7);
 }
-/* @media (prefers-color-scheme: dark) {
-	:root {
-		--text-color: papayawhip;
-		--color-bg: navy;
-		--main-color-accent-2: #2626a0;
-	}
-} */
 
 html {
 	font-size: 62.5%;
@@ -49,6 +42,7 @@ body {
 	color: var(--text-color);
 	width: 100%;
 	min-height: 100vh;
+	transition: all 0.5s;
 }
 
 .cursor-follower {
@@ -73,7 +67,7 @@ body {
 	background: transparent;
 	display: flex;
 	align-items: center;
-	z-index: 100;
+	z-index: 10;
 	transition: 0.5s;
 }
 
@@ -262,6 +256,7 @@ section {
 	transform-origin: 384px;
 	background: var(--bg-color);
 	padding: 13px 0;
+	transition: all 0.5s;
 }
 
 .home .profession-box .profession:nth-child(3) {
@@ -610,7 +605,8 @@ span {
 	border: none;
 }
 .slider .box1 {
-	background-color: var(--white-color); /* #500033 */
+	background-color: var(--bg-color); /* #500033 */
+	transition: all 0.5s;
 }
 .slider .box1 .illustration .inner {
 	background-color: var(--main-color-accent-1);
@@ -623,7 +619,8 @@ span {
 	background-color: var(--main-color-accent-1);
 }
 .slider .box2 {
-	background-color: var(--white-color); /* #000050 */
+	background-color: var(--bg-color); /* #000050 */
+	transition: all 0.5s;
 }
 .slider .box2 .illustration .inner {
 	background-color: var(--main-color-accent-1);
@@ -636,7 +633,8 @@ span {
 	background-color: #0033ff;
 }
 .slider .box3 {
-	background-color: var(--white-color); /* #00501d */
+	background-color: var(--bg-color); /* #00501d */
+	transition: all 0.5s;
 }
 .slider .box3 .illustration .inner {
 	background-color: var(--main-color-accent-1);
@@ -649,7 +647,8 @@ span {
 	background-color: #00ff44;
 }
 .slider .box4 {
-	background-color: var(--white-color); /* #554d00 */
+	background-color: var(--bg-color); /* #554d00 */
+	transition: all 0.5s;
 }
 .slider .box4 .illustration .inner {
 	background-color: var(--main-color-accent-1);
@@ -662,7 +661,8 @@ span {
 	background-color: #ff4e00;
 }
 .slider .box5 {
-	background-color: var(--white-color); /* #300050 */
+	background-color: var(--bg-color); /* #300050 */
+	transition: all 0.5s;
 }
 .slider .box5 .illustration .inner {
 	background-color: var(--main-color-accent-1);
@@ -722,7 +722,7 @@ span {
 .prev,
 .next,
 .trail {
-	z-index: 10000;
+	z-index: 5;
 	position: absolute;
 }
 
@@ -925,6 +925,7 @@ span {
 	border-radius: 0.8rem;
 	margin: 0.7rem 0;
 	box-shadow: 0 0.1rem 0.5rem var(--shadow-color);
+	transition: all 0.5s;
 }
 
 .contact form .input-box input {
