@@ -362,4 +362,4 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal('.home-content, .heading, .about-img, .project-subheading', { origin: "top" });
-ScrollReveal().reveal('.home-img img, .about-content p, .marquee, .container, .projects-container, .contact form, .footer-text, .footer-iconTop', { origin: "bottom" });
+ScrollReveal().reveal('.home-img img, .about-content p, .marquee, .container, .projects-container, .contact form', { origin: "bottom" });
