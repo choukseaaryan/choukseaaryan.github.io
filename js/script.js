@@ -69,9 +69,31 @@ tick();
 /*============ Dark/Light Mode Toggler ============*/
 let darkModeIcon = document.querySelector("#darkMode-icon");
 
+// Function to toggle between dark and light mode
+function toggleDarkMode(isDark) {
+    if (isDark) {
+        darkModeIcon.classList.remove("bx-sun");
+        document.body.classList.add("dark-mode");
+    } else {
+        darkModeIcon.classList.add("bx-sun");
+        document.body.classList.remove("dark-mode");
+    }
+}
+
+// Detect initial system preference
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+toggleDarkMode(systemPrefersDark);
+
+// Listen for system preference changes and update theme accordingly
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    const isDark = e.matches;
+    toggleDarkMode(isDark);
+});
+
+// Handle user-initiated toggle
 darkModeIcon.onclick = () => {
-	darkModeIcon.classList.toggle("bx-sun");
-	document.body.classList.toggle("dark-mode");
+    const isDarkMode = document.body.classList.toggle("dark-mode");
+    darkModeIcon.classList.toggle("bx-sun", !isDarkMode);
 };
 
 /*============ Scroll Reveal ============*/
